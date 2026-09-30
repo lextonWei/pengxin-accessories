@@ -10,6 +10,12 @@ function productName(p) {
   return p.nameEn;
 }
 
+function productAttrs(p) {
+  if (currentLang === "zh") return p.attrsZh;
+  if (currentLang === "th") return p.attrsTh;
+  return p.attrsEn;
+}
+
 function companyName() {
   if (currentLang === "zh") return COMPANY.nameZh;
   if (currentLang === "th") return COMPANY.nameTh;
@@ -49,11 +55,9 @@ function renderProducts() {
         <div class="product-sku">${p.sku}</div>
         <div class="product-name">${productName(p)}</div>
         <div class="product-meta">${p.material} · ${p.spec}</div>
-        <div class="product-meta">${t("colMoq")}: ${p.moq}</div>
-        <div class="product-price-row">
-          <div class="fob">${p.fob}</div>
-          <div class="thb">${t("colThb")}: ${p.thb}</div>
-        </div>
+        <ul class="product-attrs">
+          ${productAttrs(p).map((a) => `<li>${a}</li>`).join("")}
+        </ul>
       </div>
     </div>`
   ).join("");

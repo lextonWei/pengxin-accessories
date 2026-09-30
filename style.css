@@ -107,9 +107,9 @@ nav.main-nav a:hover { color: var(--accent); }
 .product-sku { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: 0.5px; }
 .product-name { font-weight: 700; font-size: 15px; color: #fff; }
 .product-meta { color: var(--muted); font-size: 12.5px; }
-.product-price-row { margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 12.5px; }
-.product-price-row .fob { font-weight: 700; color: #fff; }
-.product-price-row .thb { color: var(--muted); }
+.product-attrs { margin: 6px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.product-attrs li { position: relative; padding-left: 14px; color: var(--muted); font-size: 12.5px; }
+.product-attrs li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 
 /* Why us */
 .why { background: var(--panel); }
